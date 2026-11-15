@@ -1,0 +1,5 @@
+# Instrucciones locales de agentes (apuntan al sistema interno de Velsora; no se publican)
+CLAUDE.md
+AGENTS.md
+.claude/
+.vercel/
