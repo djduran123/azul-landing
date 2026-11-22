@@ -6,7 +6,7 @@
   <!-- Pieza de portfolio: AZUL es una marca ficticia. Sin indexar para que no se confunda con una tienda real. -->
   <meta name="robots" content="noindex, nofollow">
   <title>AZUL Cronógrafo · Oro rosa</title>
-  <meta name="description" content="AZUL Cronógrafo: caja oro rosa y esfera azul sunburst. Marca ficticia, pieza de portfolio de Velsora Digital.">
+  <meta name="description" content="AZUL Cronógrafo: caja oro rosa y esfera azul sunburst. Marca ficticia, pieza de portfolio de diegoduranIA.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2213%22 fill=%22%230c0c0c%22 stroke=%22%23C99A7A%22 stroke-width=%223%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%226%22 fill=%22%230B3D91%22/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -262,12 +262,55 @@
           <span class="brand__mark" aria-hidden="true"></span>
           <span class="brand__word">AZUL</span>
         </a>
-        <p>AZUL es una marca ficticia creada por Velsora Digital como pieza de portfolio. No es un producto a la venta.</p>
+        <p>AZUL es una marca ficticia creada por <a href="https://velsora-web.vercel.app/" target="_blank" rel="noopener noreferrer">diegoduranIA</a> como pieza de portfolio. No es un producto a la venta.</p>
         <p>Imágenes y videos generados con IA.</p>
       </footer>
     </div>
   </main>
 
   <script src="main.js" defer></script>
+
+<!-- Aviso de demo de portfolio (diegoduranIA). Mismo bloque en todas las demos. -->
+<style>
+  .dd-demo { position: fixed; z-index: 9999; left: 50%; bottom: 16px; transform: translateX(-50%);
+    display: flex; align-items: center; gap: 4px; max-width: calc(100% - 32px);
+    padding: 4px 4px 4px 6px; border-radius: 999px; font-family: inherit; font-size: 13px; font-weight: 500; line-height: 1.3;
+    background: rgb(12 12 14 / 86%); color: #f4f4f5; border: 1px solid rgb(255 255 255 / 14%);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgb(0 0 0 / 35%);
+    animation: dd-in 500ms cubic-bezier(0.23, 1, 0.32, 1) 600ms both; }
+  .dd-demo a { display: inline-flex; align-items: center; gap: 8px; color: inherit; text-decoration: none; padding: 6px 8px; border-radius: 999px; min-width: 0; }
+  .dd-demo__tag { flex-shrink: 0; padding: 2px 8px; border-radius: 999px; background: #f4f4f5; color: #0c0c0e; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+  .dd-demo__text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: rgb(244 244 245 / 78%); }
+  .dd-demo__by { flex-shrink: 0; font-weight: 700; color: #fff; white-space: nowrap; }
+  .dd-demo button { flex-shrink: 0; width: 32px; height: 32px; border: 0; border-radius: 50%; background: transparent; color: rgb(244 244 245 / 70%); font-size: 18px; line-height: 1; cursor: pointer; transition: background-color 150ms, color 150ms; }
+  .dd-demo :focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  .dd-demo[hidden] { display: none; }
+  @media (hover: hover) and (pointer: fine) {
+    .dd-demo a:hover .dd-demo__by { text-decoration: underline; text-underline-offset: 3px; }
+    .dd-demo button:hover { background: rgb(255 255 255 / 10%); color: #fff; }
+  }
+  .dd-demo__short { display: none; }
+  @media (max-width: 720px) {
+    .dd-demo { left: 12px; right: auto; bottom: 12px; transform: none; max-width: calc(100% - 84px); animation-name: dd-in-m; font-size: 12px; gap: 2px; }
+    .dd-demo a { gap: 5px; padding: 6px 4px; }
+    .dd-demo__tag { font-size: 10px; padding: 2px 6px; }
+    .dd-demo button { width: 28px; height: 28px; font-size: 16px; }
+    .dd-demo__long, .dd-demo__by-pre { display: none; }
+    .dd-demo__short { display: inline; }
+    .dd-demo__text { overflow: visible; }
+  }
+  @keyframes dd-in { from { opacity: 0; transform: translate(-50%, 8px); } to { opacity: 1; transform: translate(-50%, 0); } }
+  @keyframes dd-in-m { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .dd-demo { animation: none; } }
+</style>
+<aside class="dd-demo" id="dd-demo" aria-label="Aviso: sitio de demostración">
+  <a href="https://velsora-web.vercel.app/#trabajos" target="_blank" rel="noopener noreferrer">
+    <span class="dd-demo__tag">Demo</span>
+    <span class="dd-demo__text"><span class="dd-demo__long">Este negocio no existe: es un proyecto de portfolio para mostrar lo que se puede lograr.</span><span class="dd-demo__short">Negocio ficticio ·</span></span>
+    <span class="dd-demo__by"><span class="dd-demo__by-pre">Hecho por </span>diegoduranIA →</span>
+  </a>
+  <button type="button" aria-label="Cerrar aviso" onclick="this.parentNode.hidden=true;try{sessionStorage.setItem('dd-demo-closed','1')}catch(e){}">×</button>
+</aside>
+<script>try{if(sessionStorage.getItem('dd-demo-closed'))document.getElementById('dd-demo').hidden=true}catch(e){}</script>
 </body>
 </html>
